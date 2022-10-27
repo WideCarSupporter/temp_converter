@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Temperature Converter</title>
+<style>
+div {
+  background-color: lightgrey;
+  width: 300px;
+  border: 1px solid black;
+  padding: 50px;
+  margin: 20px;
+}
+.rcorners3 {
+  border-radius: 25px;
+  background-position: left top;
+  background-repeat: repeat;
+  padding: 60px ;
+  width: 320px;
+  height: 150px;
+  float: Left;
+}
+.rcorners2 {
+  border-radius: 25px;
+  background-position: right top;
+  background-repeat: repeat;
+  padding: 60px ;
+  width: 320px;
+  height: 150px;
+  float: right;
+}
+</style>
+</head>
+<body class="center">
+<div class="rcorners3">
+<h2>Temperature Converter</h2>
+<p>Type a value in the Fahrenheit field to convert the value to Celsius:</p>
+<p>
+  <label>Fahrenheit</label>
+  <input id="inputFahrenheit" type="number" placeholder="Fahrenheit" oninput="tempConverter(this.value)" onchange="temperConverter(this.value)">
+</p>
+<p>Celsius: <span id="celsius"></span></p>
+</div>
+<script>
+function tempConverter(valNum) {
+  document.getElementById("celsius").innerHTML=Math.round((valNum-32)*(5/9));
+}
+</script>
+<div class="rcorners2">
+<h2>Temperature Converter</h2>
+<p>Type a value in the Celsius field to convert the value to Fahrenheit:</p>
+
+<p>
+  <label>Celsius</label>
+  <input id="inputCelsius" type="number" placeholder="Celsius" oninput="tempConverter1(this.value)" onchange="temperConverter(this.value)">
+</p>
+<p>Fahrenheit: <span id="fahrenheit"></span></p>
+</div>
+<script>
+function tempConverter1(valNum) {
+  document.getElementById("fahrenheit").innerHTML=Math.round((valNum*(9/5))+(32));
+}
+</script>
+</body>
+</html>
